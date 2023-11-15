@@ -1,8 +1,6 @@
-"use client";
-
 type PaperProps = {
   children: React.ReactNode;
 };
 export function Paper({ children }: PaperProps) {
-  return <div className="w-fit h-fit p-4 rounded-md shadow-md shadow-black bg-white">{children}</div>;
+  return <div className="w-12 h-fit p-4 bg-white rounded-md shadow-md shadow-black">{children}</div>;
 }

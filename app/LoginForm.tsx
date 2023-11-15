@@ -1,21 +1,41 @@
 "use client";
-import { Paper } from "@/component/Paper";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 
+import { LoginButton } from "./LoginButton";
+import { RHFTextField } from "@/component/RHFTextfield";
+import { FormProvider, useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+export const loginSchema = z.object({
+  username: z.string().min(3, { message: "Not long enough brah" }),
+  password: z.string().min(3, { message: "Not long enough brah" }),
+});
+
+type LoginType = {
+  username: string;
+  password: string;
+};
 export function LoginForm() {
-  const Router = useRouter();
-  const handleSubmit = () => {
-    Router.push("/home");
-  };
+  const formMethods = useForm<LoginType>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      password: "",
+      username: "",
+    },
+  });
 
   return (
-    <Paper>
-      <p>working kinda</p>
-      <Link href="/home">To Homepage</Link>
-      <button onClick={handleSubmit} className="h-10 bg-red-400 rounded-md">
-        Nav to home
-      </button>
-    </Paper>
+    <div className="w-[20rem] mx-auto mt-40 p-4 bg-white rounded-md flex flex-col shadow-md shadow-black">
+      <FormProvider {...formMethods}>
+        <form className="flex flex-col gap-1">
+          <pre>{JSON.stringify(formMethods.watch(), null, 2)}</pre>
+          <h2 className="font-bold">Login</h2>
+          <RHFTextField placeholder="username" label={"Username"} name={"username"} />
+          <RHFTextField placeholder="password" label={"Password"} name={"password"} />
+
+          <LoginButton />
+        </form>
+      </FormProvider>
+    </div>
   );
 }
