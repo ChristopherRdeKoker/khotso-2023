@@ -9,11 +9,10 @@ export function LoginButton() {
   };
 
   return (
-    <button
-      onClick={handleSubmit}
-      className="h-10 border-2 border-black shadow-black shadow-md p-2 bg-red-400 rounded-md"
-    >
-      Nav to home
-    </button>
+    <div className="border-2 border-gray">
+      <button onClick={handleSubmit} className="border-[0.1rem] border-black  shadow-md p-2 bg-blue-300 rounded-md">
+        Submit
+      </button>
+    </div>
   );
 }

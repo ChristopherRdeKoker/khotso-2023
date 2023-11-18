@@ -5,6 +5,7 @@ import { RHFTextField } from "@/component/RHFTextfield";
 import { FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { ResetButton } from "@/component/ResetButton";
 
 export const loginSchema = z.object({
   username: z.string().min(3, { message: "Not long enough brah" }),
@@ -16,6 +17,8 @@ type LoginType = {
   password: string;
 };
 export function LoginForm() {
+  // const loginMutation = await Ap
+
   const formMethods = useForm<LoginType>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
@@ -32,8 +35,11 @@ export function LoginForm() {
           <h2 className="font-bold">Login</h2>
           <RHFTextField placeholder="username" label={"Username"} name={"username"} />
           <RHFTextField placeholder="password" label={"Password"} name={"password"} />
+          <div className="w-full justify-end flex flex-row gap-1">
+            <ResetButton />
 
-          <LoginButton />
+            <LoginButton />
+          </div>
         </form>
       </FormProvider>
     </div>
