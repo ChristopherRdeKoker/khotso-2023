@@ -17,8 +17,6 @@ type LoginType = {
   password: string;
 };
 export function LoginForm() {
-  // const loginMutation = await Ap
-
   const formMethods = useForm<LoginType>({
     resolver: zodResolver(loginSchema),
     defaultValues: {

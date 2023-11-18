@@ -15,14 +15,8 @@ const hardCodedLoginDetails = [
     id: 2,
   },
 ];
-type hardCodedLoginDetails = {
-  name: string;
-  email: string;
-  password: string;
-  id: number;
-};
 
-export async function GET<hardCodedLoginDetails>(request: NextApiRequest, response: NextApiResponse) {
+export async function GET(request: NextApiRequest, response: NextApiResponse) {
   const data = request.body;
   const { email, password } = data;
   const isValidUser = hardCodedLoginDetails.filter((i) => i.email == email && i.password == password);
