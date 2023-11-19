@@ -33,7 +33,7 @@ export function LoginForm() {
   // };
 
   return (
-    <div className="w-[20rem] mx-auto mt-40 p-4 bg-white rounded-md flex flex-col shadow-md shadow-black">
+    <div className="w-[17.5rem] mx-auto mt-40 p-4 bg-white rounded-md flex flex-col shadow-md shadow-black">
       <FormProvider {...formMethods}>
         <form className="flex flex-col gap-1">
           <pre>{JSON.stringify(formMethods.watch(), null, 2)}</pre>
