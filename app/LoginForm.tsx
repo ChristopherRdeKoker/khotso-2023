@@ -5,7 +5,7 @@ import { RHFTextField } from "@/component/RHFTextfield";
 import { FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ResetButton } from "@/component/ResetButton";
+import { ResetButton } from "./ResetButton";
 
 export const loginSchema = z.object({
   username: z.string().min(3, { message: "Not long enough brah" }),
