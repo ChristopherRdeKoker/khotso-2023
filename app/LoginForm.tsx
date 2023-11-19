@@ -6,6 +6,8 @@ import { FormProvider, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ResetButton } from "./ResetButton";
+import Link from "next/link";
+// import { useRouter } from "next/navigation";
 
 export const loginSchema = z.object({
   username: z.string().min(3, { message: "Not long enough brah" }),
@@ -25,6 +27,11 @@ export function LoginForm() {
     },
   });
 
+  // const Router = useRouter();
+  // const skipToHomePage = () => {
+  //   Router.push("./home");
+  // };
+
   return (
     <div className="w-[20rem] mx-auto mt-40 p-4 bg-white rounded-md flex flex-col shadow-md shadow-black">
       <FormProvider {...formMethods}>
@@ -35,9 +42,11 @@ export function LoginForm() {
           <RHFTextField placeholder="password" label={"Password"} name={"password"} />
           <div className="w-full justify-end flex flex-row gap-1">
             <ResetButton />
-
             <LoginButton />
           </div>
+          <Link href={"/home"} className="rounded-sm outline-2 outline-gray-500 bg-gray-100 w-12">
+            SKIP
+          </Link>
         </form>
       </FormProvider>
     </div>

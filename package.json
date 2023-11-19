@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
+    "apisauce": "^3.0.1",
+    "date-fns": "^2.30.0",
     "next": "14.0.2",
     "next-pwa": "^5.6.0",
     "react": "^18",

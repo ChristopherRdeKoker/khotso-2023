@@ -1,11 +1,13 @@
-import { Navbar } from "@/component/Navbar";
 import { HomeForm } from "./HomeForm";
+import { Navbar } from "./Navbar";
 
 export default function Homepage() {
   return (
-    <div className=" justify-center flex flex-col w-full gap-2 min-h-screen bg-blue-400 ">
+    <div className="w-full bg-blue-700">
       <Navbar />
-      <HomeForm />
+      <div className="flex flex-col  bg-blue-700 w-[64rem] mx-auto align-center min-h-screen">
+        <HomeForm />
+      </div>
     </div>
   );
 }
