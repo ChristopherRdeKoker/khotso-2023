@@ -44,7 +44,7 @@ export function LoginForm() {
             <ResetButton />
             <LoginButton />
           </div>
-          <Link href={"/home"} className="rounded-sm outline-2 outline-gray-500 bg-gray-100 w-12">
+          <Link href={"/homePage"} className="rounded-sm outline-2 outline-gray-500 bg-gray-100 w-12">
             SKIP
           </Link>
         </form>

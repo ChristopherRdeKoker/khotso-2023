@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export function LoginButton() {
   const Router = useRouter();
   const handleSubmit = () => {
-    Router.push("/home");
+    Router.push("/homePage");
   };
 
   return (
